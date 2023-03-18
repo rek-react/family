@@ -1,0 +1,13 @@
+@import "../../../../scss/vars";
+@import "../../../../scss/mixins";
+.items-portfolio{
+    overflow: visible;
+    &__item {
+        height: auto;
+        width: 85%;
+
+        @include breakpoint($md-4, 1) {
+            display: flex;
+        }
+    }
+}

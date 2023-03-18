@@ -1,0 +1,62 @@
+@import "../../scss/vars";
+@import "../../scss/mixins";
+.footer {
+  background: $black;
+  padding: 15rem 0;
+
+  @include breakpoint($md-2, 0) {
+    padding: 10rem 0;
+  }
+
+  @include breakpoint($md-3, 0) {
+    padding: 6rem 0;
+  }
+
+  &__header {
+    margin-bottom: 10rem;
+
+    @include breakpoint($md-1, 0) {
+      margin-bottom: 6rem;
+    }
+
+    @include breakpoint($md-4, 0) {
+      margin-bottom: 4rem;
+    }
+  }
+
+  &-body {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+  }
+
+  &-col {
+    padding: 0 15px;
+    flex: 0 1 33.333%;
+
+    @include breakpoint($md-3, 0) {
+      flex: 0 1 50%;
+    }
+
+    @include breakpoint(650, 0) {
+      flex: 0 1 100%;
+    }
+  }
+
+  &__contact {
+    margin-bottom: 10rem;
+
+    @include breakpoint($md-1, 0) {
+      margin-bottom: 6rem;
+    }
+
+    @include breakpoint($md-4, 0) {
+      margin-bottom: 5rem;
+    }
+  }
+}
+
+
+
+
+

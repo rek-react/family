@@ -1,0 +1,44 @@
+@import "../../../../scss/vars";
+@import "../../../../scss/mixins";
+.second-intro {
+    &__title {
+        max-width: 620px;
+        margin-bottom: 13.5rem;
+
+
+        @include breakpoint($md-4, 0) {
+            margin-bottom: 19rem;
+        }
+
+        @include breakpoint(667, 0) {
+            margin-bottom: 13rem;
+        }
+
+        @include breakpoint($md-5, 0) {
+            margin-bottom: 3rem;
+        }
+
+        span {
+            display: block;
+            text-decoration: line-through;
+        }
+    }
+    &__btns{
+        display: grid;
+        grid-template-columns: minmax(290px, 490px) minmax(auto, 360px);
+        gap: 30px;
+    
+        @include breakpoint($md-1, 0) {
+            gap: 20px;
+        }
+    
+        @include breakpoint($md-4, 0) {
+            grid-template-columns: minmax(auto, 490px) auto;
+        }
+    
+        @include breakpoint($md-5, 0) {
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+    }
+}

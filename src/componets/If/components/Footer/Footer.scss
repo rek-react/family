@@ -1,0 +1,34 @@
+@import "../../../../scss/vars";
+@import "../../../../scss/mixins";
+.footer-if{
+    display: flex;
+    gap: 16rem;
+    @include breakpoint($md-2, 0){
+        gap: 10rem;
+    }
+    @include breakpoint($md-4, 0) {
+        gap: 7rem;
+    }
+    @include breakpoint(660, 0) {
+        flex-direction: column;
+        gap: 5rem;
+    }
+    &__btn{
+        flex: 0 0 360px;
+        @include breakpoint($md-4, 0) {
+            flex: 0 0 220px;
+        }
+        .order{
+            height: 100%;
+        }
+    }
+    &__title{
+        margin-bottom: 4rem;
+        @include breakpoint($md-4, 0) {
+            margin-bottom: 2rem;
+        }
+    }
+    &__text{
+        color: $lightGray;
+    }
+}

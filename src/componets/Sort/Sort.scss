@@ -1,0 +1,21 @@
+@import "../../scss/vars";
+@import "../../scss/mixins";
+
+.sort {
+    &__header {
+        margin-bottom: 10rem;
+
+        @include breakpoint($md-2, 0) {
+            margin-bottom: 40px;
+        }
+    }
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &__body {
+        align-self: stretch;
+    }
+}
+

@@ -1,0 +1,26 @@
+@import "../../scss/vars";
+@import "../../scss/mixins";
+
+.contactForm {
+    margin-bottom: 20rem;
+    @include breakpoint($md-1, 0) {
+        margin-bottom: 10rem;
+    }
+
+    @include breakpoint($md-5, 0) {
+        margin-bottom: 6rem;
+    }
+    &__container{
+        >*:not(:last-child) {
+            margin-bottom: 10rem;
+    
+            @include breakpoint($md-2, 0) {
+                margin-bottom: 7rem;
+            }
+    
+            @include breakpoint($md-4, 0) {
+                margin-bottom: 6rem;
+            }
+        }
+    }
+}

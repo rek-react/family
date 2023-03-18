@@ -1,0 +1,46 @@
+@import "../../../../scss/vars";
+@import "../../../../scss/mixins";
+@import "../../../../scss/functions";
+.city-header {
+    position: relative;
+
+    @include breakpoint($md-3, 1) {
+        min-width: prc(250, $maxWidthContainer);
+    }
+
+    &__current {
+        font-size: inherit;
+
+        * {
+            transition: all 0.2s ease;
+
+        }
+
+        svg {
+            margin-left: 7px;
+        }
+
+        @media (any-hover: hover) {
+            * {
+                transition: all 0.2s ease;
+            }
+
+            &:hover {
+                color: $Turquoise;
+
+                svg path {
+                    fill: $Turquoise;
+                }
+            }
+        }
+
+        @include breakpoint($md-3, 0) {
+            color: $white;
+
+            svg path {
+                fill: $white;
+            }
+        }
+    }
+
+}

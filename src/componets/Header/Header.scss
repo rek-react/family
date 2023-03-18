@@ -1,0 +1,142 @@
+@import "../../scss/vars";
+@import "../../scss/mixins";
+
+.ReactModal {
+  &__Body--open {
+    .city-header__current {
+      color: $Turquoise;
+
+      svg {
+        transform: rotate(180deg);
+
+        path {
+          fill: $Turquoise;
+        }
+      }
+    }
+  }
+}
+
+.header {
+  position: fixed;
+  background: $white;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 9;
+
+  &.active-burger {
+    .logo__image {
+      background: url("./images/logo-white.png");
+    }
+
+    .logo__text {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    .burger-header {
+      border: 2px solid $dark;
+
+      &__wrapper {
+
+        &::before,
+        span {
+          background-color: $white;
+        }
+
+        &::before {
+          top: 50%;
+          transform: translateY(-50%) rotate(45deg);
+        }
+
+        span {
+          bottom: 50%;
+          transform: translateY(50%) rotate(-45deg);
+        }
+      }
+    }
+
+    .nav-header {
+      left: 0;
+
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+
+  &__nav {
+    @include breakpoint(1600, 1) {
+      margin-left: -190px;
+    }
+  }
+
+  &__logo {
+    position: relative;
+    z-index: 5;
+    flex: 0 1 290px;
+
+    @include breakpoint(1700, 0) {
+      flex: 0 1 160px;
+    }
+
+    //  @include breakpoint($md-1, 0) {
+    //    margin-right: 7rem;
+    //  }
+  }
+
+  &__wrapper {
+    padding-top: 45px;
+    padding-left: 50px;
+    padding-right: 50px;
+
+    @include breakpoint($md-1, 0) {
+      padding-right: 30px;
+      padding-left: 30px;
+    }
+
+    @include breakpoint($md-3, 0) {
+      padding-top: 20px;
+    }
+
+    @include breakpoint($md-5, 0) {
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+  }
+
+  &__wrapper,
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__container {
+    flex: 1 1 100%;
+
+    @include breakpoint($md-3, 0) {
+      justify-content: flex-end;
+    }
+  }
+
+  &__city {
+
+
+    @include breakpoint($md-3, 1) {
+      margin-right: 1.5rem;
+    }
+
+    @include breakpoint($md-3, 0) {
+      margin: 1.5rem 0;
+    }
+  }
+
+
+
+  &__burger {
+    margin-left: 8px;
+    position: relative;
+    z-index: 5;
+  }
+}

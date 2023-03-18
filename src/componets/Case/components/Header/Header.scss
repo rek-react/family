@@ -1,0 +1,27 @@
+@import "../../../../scss/vars";
+@import "../../../../scss/mixins";
+.header-case {
+    @include breakpoint($md-4, 1) {
+        align-items: flex-end;
+    }
+
+    &__col {}
+
+    &__title {
+        span {
+            display: block;
+        }
+    }
+
+    &__text {
+        max-width: 450px;
+
+        @include breakpoint($md-1, 0) {
+            max-width: 350px;
+        }
+
+        span {
+            color: $Turquoise;
+        }
+    }
+}

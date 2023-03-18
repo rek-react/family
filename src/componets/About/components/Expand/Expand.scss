@@ -1,0 +1,185 @@
+@import "../../../../scss/vars"; 
+@import "../../../../scss/mixins";
+.expand-about {
+    background: $lightBackground;
+    padding: 6rem 10rem 10rem;
+
+    @include breakpoint($md-1, 0) {
+        padding: 3rem 4rem 3rem;
+    }
+
+    @include breakpoint($md-3, 0) {
+        padding-bottom: 6rem;
+    }
+
+    @include breakpoint($md-5, 0) {
+        padding: 3rem;
+    }
+
+    &__close {
+        margin: 0 auto 4rem auto;
+
+        @include breakpoint($md-5, 0) {
+            margin-bottom: 3rem;
+        }
+    }
+
+    &__body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include breakpoint($md-3, 0) {
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+    }
+
+    &__item {
+        @include breakpoint($md-3, 1) {
+            flex: 0 1 350px;
+        }
+    }
+
+    &__rating {
+        margin: 0 6rem;
+
+        @include breakpoint($md-3, 1) {
+            flex: 1 1 auto;
+        }
+
+        @include breakpoint($md-1, 0) {
+            margin: 0 2rem;
+        }
+
+        @include breakpoint($md-3, 0) {
+            margin: 6rem 0;
+        }
+
+        @include breakpoint($md-4, 0) {
+            margin: 4rem 0;
+        }
+
+        @include breakpoint($md-4, 0) {
+            margin: 3rem 0;
+        }
+    }
+}
+
+.item-expand-about {
+    &__title {
+        font-size: 2.2rem;
+        line-height: calc(33 / 22 * 100%);
+        font-weight: 700;
+    }
+
+    &__text {
+        color: $DarkSupport;
+        font-size: 1.8rem;
+        margin-top: 10px;
+        line-height: calc(27 / 18 * 100%);
+        font-weight: 400;
+
+        @include breakpoint($md-5, 0) {
+            font-size: 1.6rem;
+        }
+    }
+}
+.rating-expand-about {
+    &__list {
+        display: flex;
+        align-items: center;
+        column-gap: 5.5px;
+
+        @include breakpoint(600, 0) {
+            column-gap: 12px;
+            height: 36px;
+            background: linear-gradient(270deg, #1b558d 0%, #379bad 100%);
+            border-radius: 12px;
+            padding: 0 15px;
+        }
+    }
+
+    &__item {
+        cursor: pointer;
+        color: $white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 1.4rem;
+        line-height: calc(18 / 14 * 100%);
+
+        @include breakpoint(600, 1) {
+            flex: 0 0 44px;
+            width: 44px;
+            background: $Turquoise;
+            height: 44px;
+            border-radius: 12px;
+
+            &_1 {
+                background: #379bad;
+            }
+
+            &_2 {
+                background: #318da7;
+            }
+
+            &_3 {
+                background: #2e86a3;
+            }
+
+            &_4 {
+                background: #2c7fa0;
+            }
+
+            &_5 {
+                background: #29789d;
+            }
+
+            &_6 {
+                background: #267199;
+            }
+
+            &_7 {
+                background: #236a96;
+            }
+
+            &_8 {
+                background: #206393;
+            }
+
+            &_9 {
+                background: #1d5b90;
+            }
+
+            &_10 {
+                background: #1b558d;
+            }
+        }
+
+        @include breakpoint(600, 0) {
+            font-size: 1.2rem;
+            flex: 1 1 auto;
+        }
+    }
+
+    &__legends {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 5px;
+    }
+
+    &__legend {
+        color: $lightGray;
+        font-size: 1.4rem;
+        line-height: calc(18 / 14 * 100%);
+
+        @include breakpoint($md-5, 0) {
+            font-size: 1.2rem;
+        }
+    }
+}

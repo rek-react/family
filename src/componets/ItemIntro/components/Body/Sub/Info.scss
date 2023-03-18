@@ -1,0 +1,24 @@
+@import "../../../../../scss/vars";
+@import "../../../../../scss/mixins";
+.info-itemIntro-sub {
+
+    &__title {
+        margin-bottom: 30px;
+
+        @include breakpoint($md-2, 0) {
+            margin-bottom: 20px;
+        }
+
+        @include breakpoint($md-5, 0) {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__text {
+        color: $lightGray;
+
+        @include breakpoint($md-5, 0) {
+            font-size: 1.6rem;
+        }
+    }
+}

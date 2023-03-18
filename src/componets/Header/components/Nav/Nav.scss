@@ -1,0 +1,243 @@
+@import "../../../../scss/vars";
+@import "../../../../scss/mixins";
+
+.nav-header {
+    @include breakpoint(1600, 0) {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        z-index: 3;
+        top: 0;
+        left: -100%;
+        background-color: $black;
+        transition: left 0.2s ease-out;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 16.5rem;
+        @include adaptive-value(padding-left, 140, 15, 0);
+        @include adaptive-value(padding-right, 140, 15, 0);
+        @include adaptive-value(padding-bottom, 120, 60, 0);
+    }
+
+    &::before {
+        content: "";
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 0;
+        transition: width 0.2s ease-out;
+        height: 10.6rem;
+        background: $black;
+        z-index: 4;
+
+        @include breakpoint($md-3, 0) {
+            height: 8.5rem;
+        }
+
+        @include breakpoint($md-4, 0) {
+            height: 7rem;
+        }
+    }
+
+    @include breakpoint($md-3, 0) {
+        padding-top: 12.5rem;
+    }
+
+    @include breakpoint($md-4, 0) {
+        padding-top: 10.5rem;
+    }
+
+    &__social-messages {
+        @include breakpoint($md-2, 1) {
+            display: none;
+        }
+
+        margin-top: 3rem;
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        @include breakpoint(1600, 1) {
+            @include adaptive-value(gap, 60, 0, 0);
+        }
+
+        @include breakpoint(1600, 0) {
+            flex-wrap: wrap;
+            row-gap: 8rem;
+            margin-bottom: 3rem;
+        }
+
+        @include breakpoint($md-3, 1) {
+            column-gap: 6rem;
+        }
+
+        @include breakpoint($md-3, 0) {
+            flex-direction: column;
+            align-items: flex-start;
+            row-gap: 6rem;
+        }
+
+        @include breakpoint($md-4, 0) {
+            row-gap: 3rem;
+        }
+    }
+
+    &__sub-list {
+        @include breakpoint(1600, 1) {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 300px;
+            opacity: 0;
+            visibility: hidden;
+            &:hover {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+
+        @include breakpoint(1600, 1) {
+            padding: 25px;
+            margin-left: -25px;
+            background: $white;
+            z-index: 7;
+        }
+
+        padding: 3rem 0 1rem;
+        row-gap: 3rem;
+
+        @include breakpoint(1600, 0) {
+            column-gap: 6rem;
+        }
+
+        &:not([hidden]) {
+            display: flex;
+
+            @include breakpoint(1600, 1) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            @include breakpoint($md-3, 0) {
+                flex-direction: column;
+                align-items: flex-start;
+                padding-left: 2rem;
+            }
+        }
+    }
+
+    &__item {
+        @media (any-hover: hover) {
+            &:not(.nav-header__item_services) {
+                .nav-header__link:hover {
+                    color: $Turquoise;
+                }
+            }
+        }
+
+        &_services {
+            flex: 1 1 auto;
+            position: relative;
+            .nav-header__link._active {
+                @include breakpoint(1600, 1) {
+                    color: $Turquoise;
+                }
+
+                @include breakpoint(1600, 0) {
+                    color: $lightGray;
+                }
+
+                &+.nav-header__sub-list {
+                    visibility: visible !important;
+                    opacity: 1 !important;
+                }
+            }
+
+            @media (any-hover: hover) {
+                .nav-header__link {
+                    cursor: default;
+
+                    &+.nav-header__sub-list {
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    &__link {
+        color: $lightGray;
+        font-size: inherit;
+        line-height: calc(30 / 20 * 100%);
+
+        @media (any-hover: hover) {
+            @include breakpoint(1600, 1) {
+                &:hover {
+                    color: $Turquoise;
+                }
+            }
+        }
+
+        @include breakpoint(1600, 0) {
+            color: $white;
+            font-size: 8rem;
+        }
+
+        @include breakpoint($md-1, 0) {
+            color: $white;
+            font-size: 6.5rem;
+        }
+
+        @include breakpoint($md-2, 0) {
+            font-size: 5.2rem;
+        }
+
+        @include breakpoint($md-4, 0) {
+            font-size: 3rem;
+        }
+    }
+
+
+    &__sub-link {
+        color: $dark;
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: $Turquoise;
+            }
+        }
+
+        @include breakpoint(1600, 0) {
+            color: $lightGray;
+        }
+    }
+}
+
+.social-messages {
+    @include breakpoint(1600, 1) {
+        display: none;
+    }
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    .social {
+        .action-icon {
+            @include breakpoint(1600, 0) {
+                background-color: $dark;
+            }
+        }
+    }
+
+    &__text {
+        color: $lightGray;
+        font-size: 1.6rem;
+        line-height: calc(27 / 16 * 100%);
+    }
+}

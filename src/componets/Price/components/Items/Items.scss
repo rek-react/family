@@ -1,0 +1,83 @@
+@import "../../../../scss/vars";
+@import "../../../../scss/mixins";
+@import "../../../../scss/functions";
+
+.items-price{
+    display: flex;
+    column-gap: 30px;
+    @include breakpoint($md-1, 0){
+        column-gap: 20px;
+    }
+    @include breakpoint($md-3, 0) {
+        column-gap: 10px;
+    }
+    @include breakpoint($md-4, 0) {
+        column-gap: 20px;
+        overflow: auto;
+
+    }
+    &__item{
+        position: relative;
+        flex: 0 1 25%;
+        border: 2px solid #EBF2F5;
+        border-radius: 12px;
+        padding: 5rem;
+        display: flex;
+        flex-direction: column;
+        @include breakpoint($md-1, 0) {
+            padding: 3rem;
+        }
+        @include breakpoint($md-3, 0) {
+            padding: 2rem;
+        }
+        @include breakpoint($md-4, 0) {
+            flex: 0 0 40%;
+        }
+        @include breakpoint($md-5, 0) {
+            flex: 0 0 prc(190,290);
+        }
+        &:hover{
+            .items-price__more {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+    &__name{
+        flex: 1 1 auto;
+        margin-bottom: 6rem;
+        line-height: calc(30/ 20 * 100%);
+        color: $DarkSupport;
+        @include breakpoint($md-3, 0) {
+            margin-bottom: 2rem;
+        }
+    }
+    &__price{
+        color: $dark;
+        span:not(.title-less){
+            display: block;
+            color: $lightGray;
+        }
+    }
+    &__more{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        padding: 4rem 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        transform: translate(-50%,-50%);
+        background: linear-gradient(270deg, #1B558D 0%, #379BAD 100%);
+        border-radius: 12px;
+        gap: 20px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.2s ease;
+        span{
+            color: $white;
+        }
+    }
+}

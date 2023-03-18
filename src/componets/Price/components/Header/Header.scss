@@ -1,0 +1,11 @@
+@import "../../../../scss/vars";
+@import "../../../../scss/mixins";
+
+.header-price{
+    &__title{
+        margin-bottom: 4rem;
+        @include breakpoint($md-5, 0) {
+            margin-bottom: 2rem;
+        }
+    }
+}

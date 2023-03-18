@@ -1,0 +1,17 @@
+@import "../../scss/mixins";
+.spoiler{
+    &__content {
+        &.active{
+            position: relative;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            max-height: 0;
+        }
+     
+        &.show {
+            max-height: 1000px;
+            transition: max-height 0.3s ease-in;
+        }
+    }
+
+}

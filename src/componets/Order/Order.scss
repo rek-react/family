@@ -1,0 +1,112 @@
+@import "../../scss/vars";
+@import "../../scss/mixins";
+.order {
+    position: relative;
+    padding: 60px;
+
+    @include breakpoint($md-2, 0) {
+        padding: 30px;
+    }
+
+
+    @include breakpoint($md-5, 0) {
+        max-width: none;
+        padding: 20px;
+    }
+
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        border-radius: 12px;
+        overflow: hidden;
+        height: 100%;
+        border: 2px solid #ebf2f5;
+    }
+
+    @media (any-hover:hover) {
+
+        &:hover {
+            &::before {
+                width: 0;
+                height: 0;
+            }
+
+            * {
+                color: $white;
+            }
+
+            border: none;
+            background: linear-gradient(270deg, #1B558D 0%, #379BAD 100%);
+        }
+    }
+
+    &__title {
+        margin-bottom: 10px;
+    }
+
+    &__title,
+    &__text {
+        color: $dark;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        font-weight: 400;
+    }
+
+    &__text {
+        margin-bottom: 27px;
+        flex: 1 1 auto;
+
+        span {
+            color: $Turquoise;
+        }
+
+        @include breakpoint($md-3, 0) {
+            margin-bottom: 2rem;
+        }
+    }
+
+
+
+    &__btn {
+        display: inline-flex;
+        align-items: center;
+
+        i {
+            @include breakpoint($md-2, 0) {
+                background-color: $lightBackground;
+            }
+
+            &:hover {
+                &::before {
+                    width: 0;
+                    height: 0;
+                }
+
+                svg path {
+                    fill: #1B558D;
+                }
+            }
+        }
+
+
+
+        @include breakpoint($md-5, 0) {
+            font-size: 1.6rem;
+
+            i {
+                margin-left: 10px;
+            }
+        }
+
+
+        i {
+            margin-left: 20px;
+        }
+    }
+}

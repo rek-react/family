@@ -1,0 +1,84 @@
+@import "../../../../scss/vars";
+@import "../../../../scss/mixins";
+.contact-footer {
+    &__body {
+        align-items: center;
+        row-gap: 3rem;
+    }
+
+    &_col {}
+
+    &__call {}
+
+    &__col_last {
+        @include breakpoint($md-3, 0) {
+            flex: 0 1 100%;
+        }
+    }
+}.call-footer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: flex-start;
+
+    &__email {
+        color: $lightGray;
+        margin-top: 10px;
+    }
+}
+
+.copyright-contact {
+    @include breakpoint($md-3, 0) {
+        display: flex;
+        align-items: center;
+        column-gap: 30px;
+    }
+
+    @include breakpoint(650, 0) {
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 10px;
+    }
+
+    &__privacy {
+        font-size: 1.4rem;
+        line-height: calc(18 / 14 * 100%);
+        color: $white;
+
+        @include breakpoint($md-3, 0) {
+            flex: 0 1 50%;
+        }
+
+        &[href] {
+            @media (any-hover: hover) {
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        span {
+            color: $lightGray;
+        }
+    }
+}
+
+.social-network-footer {
+    display: flex;
+    align-items: center;
+    gap: 20px 40px;
+
+    @include breakpoint($md-1, 0) {
+        gap: 20px;
+    }
+
+    &__link {
+        color: $white;
+
+        @media (any-hover: hover) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

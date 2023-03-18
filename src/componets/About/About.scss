@@ -1,0 +1,45 @@
+@import "../../scss/vars";
+@import "../../scss/mixins";
+
+.about {
+  margin: 20rem 0;
+
+  @include breakpoint($md-1, 0) {
+    margin: 10rem 0;
+  }
+
+  @include breakpoint($md-5, 0) {
+    margin: 6rem 0;
+  }
+
+  &__title {
+    margin-bottom: 10rem;
+    text-align: center;
+
+    span {
+      display: block;
+    }
+
+    @include breakpoint($md-3, 0) {
+      margin-bottom: 6rem;
+    }
+
+    @include breakpoint($md-5, 0) {
+      margin-bottom: 4rem;
+    }
+  }
+
+  &__btns {
+    margin: 6rem 0;
+    text-align: center;
+
+    @include breakpoint($md-5, 0) {
+      margin: 4rem 0;
+    }
+  }
+}
+
+
+
+
+

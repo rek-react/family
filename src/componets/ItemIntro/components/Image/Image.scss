@@ -1,0 +1,68 @@
+@import "../../../../scss/vars";
+@import "../../../../scss/mixins";
+.image-itemIntro {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    &,
+    img {
+        overflow: hidden;
+        border-radius: 12px;
+    }
+
+    @include breakpoint($md-4, 0) {
+        padding-bottom: prc(220, 290);
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            .image-itemIntro__more {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+
+    &__more {
+        @media (any-hover: hover) {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s ease;
+        }
+
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        background: #ffffff;
+        border-radius: 12px;
+        transform: translate(-50%, -50%);
+
+        @include breakpoint($md-3, 1) {
+            padding: 4rem 3rem;
+            gap: 20px;
+        }
+
+        @include breakpoint($md-3, 0) {
+            width: 44px;
+            height: 44px;
+
+            .image-itemIntro__arrow,
+            span {
+                display: none;
+            }
+        }
+
+        span {
+            color: $DarkSupport;
+            font-size: 1.4rem;
+            line-height: calc(18 / 14 * 100%);
+        }
+    }
+}

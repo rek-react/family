@@ -1,0 +1,52 @@
+@import "../../scss/vars";
+@import "../../scss/mixins";
+
+.Modal {
+    &__Overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 30px;
+        width: 100%;
+        z-index: 999;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.9);
+
+        @include breakpoint($md-5, 0) {
+            padding: 15px;
+        }
+    }
+
+    &__Content {
+        width: 100%;
+        inset: 0;
+        overflow: hidden;
+        height: 100%;
+        background: none;
+        padding: 0;
+        border: none;
+        position: relative;
+    }
+
+    &__Body {
+        height: 100%;
+    }
+
+    &__Close {
+        position: absolute;
+        right: 10px;
+        top: 0;
+        color: $white;
+        font-size: 30px;
+        cursor: pointer;
+
+        @include breakpoint($md-4, 0) {
+            font-size: 35px;
+            top: 10px;
+            right: 15px;
+        }
+    }
+}

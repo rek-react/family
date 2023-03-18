@@ -1,0 +1,75 @@
+@import "../../scss/vars";
+@import "../../scss/mixins";
+
+.portfolio {
+    margin: 20rem 0;
+    @include breakpoint($md-2, 0) {
+        margin: 10rem 0;
+    }
+
+    @include breakpoint($md-5, 0) {
+        margin: 6rem 0;
+    }
+
+    &__body {
+        @include breakpoint($md-3, 1) {
+            display: flex;
+        }
+
+    }
+    &__title {
+        margin-bottom: 10rem;
+
+        @include breakpoint($md-1, 0) {
+            margin-bottom: 6rem;
+        }
+
+        @include breakpoint($md-4, 0) {
+            margin-bottom: 4rem;
+        }
+    }
+
+
+    &__image {
+        height: auto;
+        margin-right: 80px;
+
+        @include breakpoint($md-1, 0) {
+            margin-right: 40px;
+        }
+
+        @include breakpoint($md-4, 0) {
+            margin-right: 0;
+        }
+
+        @include breakpoint($md-4, 1) {
+            flex: 0 0 prc(440, 1220);
+        }
+
+        @include breakpoint($md-4, 0) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__content {
+        padding-right: 100px;
+
+        @include breakpoint($md-2, 0) {
+            padding-right: 50px;
+        }
+
+        @include breakpoint($md-3, 0) {
+            padding-right: 0px;
+        }
+
+        @include breakpoint($md-4, 1) {
+            flex: 0 1 630px;
+        }
+    }
+    .item-intro__header {
+        @include breakpoint($md-4, 1) {
+            padding-left: 0;
+        }
+
+    }
+}

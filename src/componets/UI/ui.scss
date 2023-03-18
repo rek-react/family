@@ -1,0 +1,94 @@
+@import "../../scss/vars";
+@import "../../scss/mixins";
+
+
+
+.title {
+  span {
+    color: $Turquoise;
+  }
+
+  &-white {
+    color: $white;
+  }
+
+  &-more {
+    font-size: 10rem;
+    line-height: calc(120 / 100 * 100%);
+
+    @include breakpoint($md-1, 0) {
+      font-size: 6.7rem;
+    }
+
+    @include breakpoint($md-2, 0) {
+      font-size: 5.4rem;
+    }
+
+    @include breakpoint($md-4, 0) {
+      font-size: 3.6rem;
+    }
+  }
+
+  &-middle {
+    font-size: 8rem;
+    line-height: calc(96 / 80 * 100%);
+
+    @include breakpoint($md-1, 0) {
+      font-size: 5.2rem;
+      line-height: calc(62 / 52 * 100%);
+    }
+
+    @include breakpoint($md-5, 0) {
+      font-size: 3rem;
+      line-height: calc(36 / 30 * 100%);
+    }
+  }
+
+  &-less {
+    font-size: 5rem;
+    line-height: calc(65 / 50 * 100%);
+
+    @include breakpoint($md-1, 0) {
+      font-size: 3.6rem;
+    }
+
+    @include breakpoint($md-2, 0) {
+      font-size: 3rem;
+    }
+
+    @include breakpoint($md-4, 0) {
+      font-size: 2.4rem;
+    }
+  }
+}
+
+.image-intro {
+
+  &,
+  img {
+    border-radius: 12px;
+    overflow: hidden;
+  }
+}
+
+.text {
+  font-size: 2.6rem;
+  color: $dark;
+  line-height: calc(41 / 26 * 100%);
+
+  a {
+    color: $Turquoise;
+  }
+
+  @include breakpoint($md-1, 0) {
+    font-size: 2.3rem;
+  }
+
+  @include breakpoint($md-2, 0) {
+    font-size: 2rem;
+  }
+
+  @include breakpoint($md-4, 0) {
+    font-size: 1.8rem;
+  }
+}

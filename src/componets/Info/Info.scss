@@ -1,0 +1,41 @@
+@import "../../scss/vars";
+@import "../../scss/mixins";
+.info {
+    margin-top: 20rem;
+
+    @include breakpoint($md-1, 0) {
+        margin-top: 10rem;
+    }
+
+    @include breakpoint($md-4, 0) {
+        margin-top: 8rem;
+    }
+
+    @include breakpoint($md-5, 0) {
+        margin-top: 6rem;
+    }
+
+    &__items {
+        &.swiper {
+            overflow: visible;
+        }
+        .swiper-slide {
+            height: auto;
+            max-width:360px;
+            width: 100%;
+
+            @include breakpoint($md-2, 0) {
+                max-width: 280px;
+            }
+
+            @include breakpoint($md-4, 0) {
+                max-width: 260px;
+            }
+
+            @include breakpoint($md-5, 0) {
+                max-width: 240px;
+            }
+        }
+    }
+}
+

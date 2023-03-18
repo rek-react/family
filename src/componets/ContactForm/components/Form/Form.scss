@@ -1,0 +1,128 @@
+@import "../../../../scss/vars";
+@import "../../../../scss/mixins";
+
+.contactForm__body {
+    > *:not(:last-child) {
+        margin-bottom: 10rem;
+        @include breakpoint($md-2, 0) {
+            margin-bottom: 6rem;
+        }
+        @include breakpoint($md-4, 0){
+            margin-bottom: 5rem;
+        }
+    }
+    .time{
+        @include breakpoint($md-5, 0){
+            gap: 10px;
+            .inputRadio {
+                padding: 15px 20px;
+                font-size: 1.6rem;
+                line-height: calc(24 / 16 * 100%);
+                flex: 1 0 auto;
+            }
+        }
+       
+    }
+}
+.item-contactForm{
+    &__title{
+        margin-bottom: 2rem;
+    }
+    &__list {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        @include breakpoint($md-5, 0){
+            flex-wrap: nowrap;
+            overflow: auto;
+            gap: 10px;
+            & .inputRadio{
+                min-width: auto;
+                flex: 1 0 auto;
+                padding: 15px 20px;
+                font-size: 1.6rem;
+                font-weight: 400;
+                line-height: 1;
+            }
+        }
+    }
+    &__inputs{
+        textarea{
+            resize: none;
+            min-height: 140px;
+        }
+    }
+    &__input{
+        width: 100%;
+        padding: 18px 30px;
+        border-radius: 12px;
+        background:$lightBackground ;
+        &:not(:first-child){
+            margin-top: 3rem;
+            @include breakpoint($md-5, 0){
+                margin-top: 2rem;
+            }
+        }
+        &::placeholder  {
+            color: $lightGray;
+        }
+    }
+}
+.footer-contactForm {
+    @include breakpoint($md-4, 1) {
+        margin-top: 6rem;
+        display: flex;
+        align-items: center;
+    }
+
+    @include breakpoint($md-4, 0) {
+        margin-top: 4rem;
+        text-align: center;
+    }
+
+    &__submit {
+        display: inline-flex;
+        align-items: center;
+
+        @media (any-hover: hover) {
+            &:hover {
+                i {
+                    svg path {
+                        fill: $white;
+                    }
+
+                    &::before {
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                }
+            }
+        }
+
+        span {
+            font-size: 2.2rem;
+            line-height: calc(33 / 22 * 100%);
+            font-weight: 700;
+        }
+
+        i {
+            margin-left: 20px;
+        }
+    }
+
+    &__policy {
+        color: $lightGray;
+        margin-left: 4rem;
+        font-size: 12px;
+        line-height: 135%;
+
+        @include breakpoint($md-4, 0) {
+            margin: 3rem 0 0 0;
+        }
+
+        @include breakpoint($md-5, 0) {
+            margin: 2rem 0 0 0;
+        }
+    }
+}

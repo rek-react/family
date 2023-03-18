@@ -1,0 +1,99 @@
+@import "./vars.scss";
+@import "./functions.scss";
+@import "./mixins.scss";
+@import "./reboot.scss";
+@import "./bg.scss";
+@import "../componets/UI/ui.scss";
+
+
+html {
+  font-size: 62.5%;
+
+}
+
+body {
+  font-weight: 600;
+  color: $dark;
+  font-size: 2rem;
+  font-family: $fontFamily;
+  &.ReactModal__Body--open {
+    overflow: hidden;
+
+    @media (any-hover:hover) {
+
+      .wrapper,
+      .header {
+        padding-right: 8px;
+      }
+    }
+
+  }
+
+  @include breakpoint($md-1, 0) {
+    font-size: 1.8rem;
+  }
+
+  @include breakpoint($md-4, 1) {
+
+    &,
+    .scroll-bar {
+      &::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #f7efef;
+        overflow: hidden;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #a5a2a2;
+      }
+    }
+  }
+
+}
+
+
+
+.page {
+  flex: 1 1 auto;
+  padding-top: 24rem;
+
+  @include breakpoint($md-1, 0) {
+    padding-top: 21rem;
+  }
+
+  @include breakpoint($md-3, 0) {
+    padding-top: 14rem;
+  }
+
+  @include breakpoint($md-4, 0) {
+    padding-top: 9rem;
+  }
+
+}
+
+.container-less {
+  max-width: $maxWidthContainer + px;
+  margin: 0 auto;
+  padding: 0 30px;
+  @include breakpoint($md-3, 0) {
+    padding: 0 20px;
+  }
+  @include breakpoint($md-5, 0) {
+    padding: 0 15px;
+  }
+}
+
+.container-more {
+  max-width: $maxWidthContainerMore + px;
+  margin: 0 auto;
+  padding: 0 30px;
+  @include breakpoint($md-3, 0) {
+    padding: 0 20px;
+  }
+  @include breakpoint($md-5, 0) {
+    padding: 0 15px;
+  }
+}

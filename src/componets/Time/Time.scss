@@ -1,0 +1,27 @@
+@import "../../scss/vars";
+@import "../../scss/mixins";
+.time {
+    >*:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        @include breakpoint($md-5, 0){
+            flex-wrap: nowrap;
+            overflow: auto;
+        }
+    }
+
+
+    &__text {
+        color: $lightGray;
+        @include breakpoint($md-4, 0){
+            font-size: 1.6rem;
+            line-height: calc(24 / 16 *100%);
+        }
+    }
+}

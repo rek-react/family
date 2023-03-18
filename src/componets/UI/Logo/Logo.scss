@@ -1,0 +1,30 @@
+@import "../../../scss/vars";
+@import "../../../scss/mixins";
+.logo {
+  display: inline-flex;
+  align-items: flex-end;
+  font-weight: 800;
+  color: $dark;
+  &.menuActive{
+    cursor: default;
+    pointer-events: none;
+  }
+  &__image {
+    flex: 0 0 43px;
+    transition: all 0.3s linear;
+    height: 53px;
+    background: url("./images/logo.svg") 0 0 no-repeat;
+    @include breakpoint($md-4, 0) {
+      flex: 0 0 36px;
+      height: 42px;
+    }
+  }
+  &__text {
+    font-size: 22px;
+    margin-left: -15px;
+    @include breakpoint($md-4, 0) {
+      margin-left: -10px;
+      font-size: 18px;
+    }
+  }
+}

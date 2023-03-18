@@ -1,0 +1,194 @@
+@import "../../../../../scss/vars";
+@import "../../../../../scss/mixins";
+@import "../../../../../scss/functions";
+.site-first-strategy {
+  img {
+    object-fit: fill;
+  }
+  &__text {
+    position: absolute;
+    left: calc(100% + 30px);
+    top: 50%;
+    transform: translateY(-50%);
+    @include breakpoint($md-3, 0) {
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+.first-strategy {
+  @include breakpoint($md-4, 0) {
+    display: block;
+  }
+  &__col {
+    &:not(.step-2-strategy-col_main) {
+      margin-top: 50px;
+      @include breakpoint($md-4, 0) {
+        display: none;
+      }
+    }
+  }
+  &__site {
+    padding-bottom: prc(340, 490);
+  }
+}
+.item-first-strategy {
+  display: flex;
+  align-items: center;
+  &__links {
+    display: flex;
+    @include breakpoint($md-4, 0) {
+      min-height: 120px;
+      align-items: flex-end;
+    }
+  }
+  &__lineAndText {
+    position: relative;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__text {
+    position: absolute;
+    right: 40px;
+    bottom: 20px;
+    @include breakpoint($md-4, 1) {
+      max-width: 120px !important;
+    }
+    @include breakpoint($md-3, 0) {
+      right: 10px;
+    }
+    @include breakpoint($md-4, 0) {
+      margin: 0 auto;
+      width: 100%;
+      right: 50%;
+      bottom: 50%;
+      transform: translate(50%, 50%);
+      br {
+        display: none;
+      }
+    }
+  }
+  &__line {
+    flex: 1 1 auto;
+    min-width: 60px;
+    &::before {
+      left: -3px;
+      top: 50%;
+      border: 10px solid transparent;
+      border-left: 10px solid #2d3845;
+      transform: translateY(-50%);
+    }
+    &::after {
+      right: -10px;
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+      border-top: 2px solid #2d3845;
+      border-right: 2px solid #2d3845;
+      width: 10px;
+      height: 10px;
+    }
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 100px;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    z-index: 1;
+    border-radius: 12px;
+    @include breakpoint($md-3, 0) {
+      flex: 0 0 80px;
+      width: 80px;
+      height: 80px;
+    }
+    @include breakpoint($md-4, 0) {
+      flex: 0 0 60px;
+      width: 60px;
+      height: 60px;
+      &:nth-child(even) {
+        align-self: flex-start;
+      }
+    }
+    &_g,
+    &_inst {
+      background-color: $dark;
+    }
+    &_ya {
+      background-color: #fc3f1d;
+    }
+    &_vk {
+      background: #0077ff;
+    }
+    &_fc {
+      background: #16a6fb;
+    }
+  }
+  &_inst {
+    flex-direction: column;
+    .item-first-strategy__line {
+      min-width: 0;
+      min-height: 120px;
+      @include breakpoint($md-4, 0) {
+        min-height: 80px;
+      }
+      &::before {
+        left: 50%;
+        top: -3px;
+        transform: translateX(-50%) rotate(90deg);
+      }
+      &::after {
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%) rotate(135deg);
+      }
+    }
+  }
+  &_ya,
+  &_fc {
+    margin-top: 100px;
+  }
+
+  &_g,
+  &_vk {
+    align-items: flex-end;
+    .item-first-strategy__line {
+      min-width: 110px;
+
+      &::before {
+        content: none;
+      }
+    }
+  }
+  &_g {
+    margin-left: 50%;
+    margin-right: -30px;
+    justify-content: flex-end;
+    .item-first-strategy__line {
+      transform-origin: left;
+      transform: rotate(45deg);
+    }
+  }
+
+  &_vk {
+    margin-right: 50%;
+    margin-left: -30px;
+
+    .item-first-strategy__line {
+      transform-origin: right;
+      transform: rotate(-45deg);
+      &::after {
+        right: 100%;
+        transform: translateY(-50%) rotate(-135deg);
+      }
+    }
+  }
+  &_fc {
+    .item-first-strategy__line {
+      transform: rotate(180deg);
+    }
+  }
+}

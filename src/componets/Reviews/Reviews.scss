@@ -1,0 +1,42 @@
+@import "../../scss/vars";
+@import "../../scss/mixins";
+.reviews {
+    margin-bottom: 20rem;
+    @include breakpoint($md-2, 0) {
+        margin-bottom: 10rem;
+    }
+    @include breakpoint($md-5, 0) {
+        margin-bottom: 6rem;
+    }
+    &__body {
+        @include breakpoint($md-3, 1) {
+            display: flex;
+        }
+
+    }
+
+    &__title {
+        align-self: flex-start;
+        flex: 0 1 490px;
+        margin-right: 16rem;
+
+        @include breakpoint($md-1, 0) {
+            margin-right: 8rem;
+            flex: 0 1 300px;
+        }
+
+        @include breakpoint($md-3, 0) {
+            margin: 0 0 5rem 0;
+        }
+
+        @include breakpoint($md-5, 0) {
+            margin: 0 0 4rem 0;
+        }
+    }
+
+    &__content {
+        @include breakpoint($md-3, 1) {
+            flex: 1 1 auto;
+        }
+    }
+}

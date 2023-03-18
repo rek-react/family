@@ -1,0 +1,61 @@
+@import "../../../../scss/vars";
+.header-sort {
+    position: relative;
+
+    &__title {
+        color: $DarkSupport;
+        font-size: 1.8rem;
+        line-height: calc(27 / 18 * 100%);
+        margin-bottom: 1rem;
+    }
+    .spoiler__button.active .header-sort__current i {
+        &::before {
+            width: 100%;
+            height: 100%;
+        }
+
+        svg path {
+            fill: $white;
+        }
+    }
+    &__current {
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+        i {
+            background-color: $lightBackground;
+            margin-left: 20px;
+
+        }
+
+    }
+
+    &__list {
+        background-color: $white;
+    }
+
+    &__item {
+        font-size: 2.5rem;
+        line-height: calc(35 / 25 * 100%);
+        cursor: pointer;
+        display: inline-block;
+        @media (any-hover:hover) {
+            transition: all 0.3s ease;
+            border-radius: 12px;
+            padding: 5px;
+
+            &:hover {
+                color: $white;
+                background-color: $Turquoise;
+            }
+        }
+
+        @media (any-hover:none) {
+            &:not(:last-child) {
+                margin-bottom: 15px;
+            }
+        }
+
+
+    }
+}

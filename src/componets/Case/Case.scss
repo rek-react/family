@@ -1,0 +1,122 @@
+@import "../../scss/vars";
+@import "../../scss/mixins";
+
+.case {
+  background: linear-gradient(180deg,
+      #ffffff 0%,
+      #f2eef7 22.1%,
+      #edf1f7 50.1%,
+      #f0eef8 78.36%,
+      #ffffff 100%);
+  margin: 20rem 0;
+
+  @include breakpoint($md-1, 0) {
+    margin: 10rem 0;
+  }
+
+  @include breakpoint($md-5, 0) {
+    margin: 6rem 0;
+  }
+
+  &__image {
+    height: 100%;
+    width: 100%;
+  }
+
+  &__header {
+    margin-bottom: 20rem;
+
+    @include breakpoint($md-1, 0) {
+      margin-bottom: 10rem;
+    }
+
+    @include breakpoint($md-4, 0) {
+      margin-bottom: 6rem;
+    }
+  }
+
+  &-body {
+    display: flex;
+    margin-right: -80px;
+    margin-left: -80px;
+
+    @include breakpoint($md-1, 0) {
+      margin-right: -60px;
+      margin-left: -60px;
+    }
+
+    @include breakpoint($md-2, 0) {
+      margin-right: -30px;
+      margin-left: -30px;
+    }
+
+    @include breakpoint($md-4, 0) {
+      margin-right: 0;
+      margin-left: 0;
+    }
+
+    @include breakpoint($md-4, 0) {
+      flex-direction: column;
+    }
+  }
+
+  &-col {
+    flex: 0 1 50%;
+    padding: 0 80px;
+
+    @include breakpoint($md-1, 0) {
+      padding: 0 60px;
+    }
+
+    @include breakpoint($md-2, 0) {
+      padding: 0 30px;
+    }
+
+    @include breakpoint($md-4, 0) {
+      padding: 0;
+    }
+  }
+
+  &__row {
+    &:not(:last-child) {
+      margin-bottom: 20rem;
+    }
+
+    @include breakpoint($md-4, 0) {
+      flex-direction: column-reverse;
+      row-gap: 20px;
+
+      &:not(:last-child) {
+        margin-bottom: 10rem;
+      }
+    }
+
+    @include breakpoint($md-4, 0) {
+      &:not(:last-child) {
+        margin-bottom: 6rem;
+      }
+    }
+  }
+
+  &__footer {
+    text-align: center;
+    margin-top: 10rem;
+
+    @include breakpoint($md-4, 0) {
+      margin-top: 6rem;
+    }
+  }
+
+  &__item {
+    padding: 10.7rem 13rem 10.7rem 0;
+
+    @include breakpoint($md-1, 0) {
+      padding: 4.5rem 7rem 4.5rem 0;
+    }
+
+    @include breakpoint($md-3, 0) {
+      padding: 0 1rem 0 0;
+    }
+  }
+}
+

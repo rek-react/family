@@ -1,0 +1,15 @@
+@import "../../../../scss/vars";
+@import "../../../../scss/mixins";
+.footer-price{
+    margin-top: 10rem;
+    text-align: center;
+    @include breakpoint($md-3, 0){
+        margin-top: 8rem;
+    }
+    @include breakpoint($md-4, 0){
+        margin-top: 6rem;
+    }
+    @include breakpoint($md-5, 0){
+        margin-top: 4rem;
+    }
+}

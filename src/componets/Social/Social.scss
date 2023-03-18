@@ -1,0 +1,17 @@
+@import "../../scss/mixins.scss";
+.social {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  &.main{
+    @include breakpoint(1600, 1) {
+        position: fixed;
+        top: 30%;
+        left: 30px;
+        width: 44px;
+        flex-direction: column;
+        z-index: 10;
+      }
+  }
+ 
+}

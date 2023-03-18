@@ -1,0 +1,18 @@
+@import "../../../../scss/vars";
+@import "../../../../scss/mixins";
+.header-itemIntro {
+    &__text {
+        margin-top: 10px;
+        color: $lightGray;
+        line-height: calc(27 / 16 * 100%);
+        font-size: 1.8rem;
+
+        @include breakpoint($md-3, 0) {
+            font-size: 1.6rem;
+        }
+
+        @include breakpoint($md-4, 0) {
+            display: none;
+        }
+    }
+}

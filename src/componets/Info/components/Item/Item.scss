@@ -1,0 +1,70 @@
+@import "../../../../scss/vars";
+@import "../../../../scss/mixins";
+.item-info {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    &__title {
+        margin-bottom: 30px;
+
+        @include breakpoint($md-4, 0) {
+            margin-bottom: 20px;
+        }
+
+        &_image {
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 110px;
+                height: 100%;
+                background: url('../../images/ya.png') no-repeat;
+                background-size: contain;
+
+                @include breakpoint($md-1, 0) {
+                    width: 72px;
+                }
+
+                @include breakpoint($md-2, 0) {
+                    width: 69px;
+                }
+
+                @include breakpoint($md-4, 0) {
+                    width: 40px;
+                }
+            }
+
+        }
+
+        flex-basis: 116px;
+
+        @include breakpoint($md-1, 0) {
+            flex-basis: 78px;
+        }
+
+        @include breakpoint($md-2, 0) {
+            flex-basis: 62px;
+            margin-bottom: 20px;
+        }
+
+        @include breakpoint($md-4, 0) {
+            flex-basis: 43px;
+        }
+
+        @include breakpoint($md-5, 0) {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__text {
+        flex: 0 0 auto;
+        justify-self: flex-start;
+        color: $DarkSupport;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        font-weight: 400;
+    }
+}

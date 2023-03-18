@@ -1,0 +1,60 @@
+@import "../../scss/vars";
+@import "../../scss/mixins";
+.strategy {
+  &__step-1 {
+    padding-bottom: 10rem;
+    @include breakpoint($md-4, 0) {
+      display: none;
+    }
+  }
+  &__step-2 {
+    padding: 12rem 0;
+    @include breakpoint($md-1, 0) {
+      padding: 10rem 0;
+    }
+    @include breakpoint($md-3, 0) {
+      padding: 8rem 0;
+    }
+    @include breakpoint($md-5, 0) {
+      padding: 6rem 0;
+    }
+  }
+  &__title {
+    margin-bottom: 10rem;
+    span {
+      display: block;
+      margin-left: 130px;
+      @include breakpoint($md-3, 0) {
+        margin-left: 80px;
+      }
+      @include breakpoint($md-4, 0) {
+        margin-left: 0;
+      }
+    }
+    @include breakpoint($md-3, 0) {
+      margin-bottom: 6rem;
+    }
+    @include breakpoint($md-4, 0) {
+      text-align: center;
+      color: $white;
+    }
+  }
+  &-text {
+    z-index: 1;
+    color: $lightGray;
+    line-height: calc(30 / 20 * 100%);
+    max-width: 200px;
+  }
+  &-line {
+    border: 2px dashed #2d3845;
+    border-radius: 6px;
+    position: relative;
+    min-width: 30px;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+    }
+  }
+}
+

@@ -1,0 +1,21 @@
+@import "../../../../../scss/vars";
+.bot-itemIntro-sub {
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__sub-title {
+        color: $lightGray;
+        font-size: 1.4rem;
+        line-height: calc(18 / 14 * 100%);
+        margin-bottom: 5px;
+    }
+
+    &__title {
+        line-height: calc(27 / 18 * 100%);
+        font-size: 1.8rem;
+        font-weight: 400;
+    }
+}

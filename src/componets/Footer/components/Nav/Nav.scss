@@ -1,0 +1,106 @@
+@import "../../../../scss/vars";
+@import "../../../../scss/mixins";
+
+.nav-footer {
+
+    &__body,
+    &__col {
+        row-gap: 6rem;
+
+        @include breakpoint(650, 0) {
+            row-gap: 4rem;
+        }
+    }
+
+    &__col {
+        display: flex;
+        flex-direction: column;
+
+        &:last-child {
+            .item-nav-footer__list {
+                @include breakpoint($md-3, 0) {
+                    flex-direction: row;
+                    gap: 20px 40px;
+                }
+                @include breakpoint(650, 0) {
+                    flex-direction: column;
+                    row-gap:10px;
+                }
+            }
+        }
+    }
+
+    &__item {
+        flex: 1 1 auto;
+    }
+}
+
+.spoiler__button.active {
+    .item-nav-footer__title {
+        svg {
+            transform: translateY(-50%) rotate(180deg);
+        }
+    }
+}
+
+
+
+.item-nav-footer {
+
+    &__title {
+        color: $white;
+
+        span {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        @include breakpoint(650, 0) {
+            padding-right: 20px;
+            position: relative;
+
+            span {
+                font-size: 1.6rem;
+            }
+
+        }
+
+        svg {
+            @include breakpoint(650, 1) {
+                display: none;
+            }
+
+            @include breakpoint(650, 0) {
+                transition: transform 0.5s ease;
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+
+    &__list {
+        padding-top: 30px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+
+        @include breakpoint(650, 0) {
+            row-gap: 10px;
+            padding: 20px 0 0 20px;
+        }
+    }
+
+    &__link {
+        color: $lightGray;
+        font-size: 1.4rem;
+        line-height: calc(18 / 14 * 100%);
+
+        @media (any-hover: hover) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

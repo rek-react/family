@@ -1,0 +1,172 @@
+@import "../../../../../scss/vars";
+@import "../../../../../scss/mixins";
+
+.city-dialog {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 100vh;
+
+    &__title {
+        color: $white;
+        margin-bottom: 25px;
+        font-size: 2.2rem;
+        width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 5px;
+        span {
+            font-weight: 700;
+        }
+        @include breakpoint($md-5, 0) {
+            span {
+                margin-top: 5px;
+            }
+        }
+    }
+
+    &__items {
+        overflow-y: auto;
+        overflow-x: hidden;
+        display: flex;
+
+        @include breakpoint($md-2, 0) {
+            flex-wrap: wrap;
+        }
+
+    }
+
+    &__item {
+        flex: 0 1 33.333%;
+
+        @include breakpoint($md-2, 0) {
+            flex: 0 1 50%;
+
+            &:not(:last-child) {
+                margin-bottom: 30px;
+            }
+        }
+
+        @include breakpoint($md-4, 0) {
+            flex: 0 1 100%;
+
+            &:not(:last-child) {
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    &__loading {
+        flex: 0 0 auto;
+        width: 50px;
+        align-self: center;
+        justify-self: center;
+        height: 50px;
+        margin-top: 40px;
+        border: 5px solid #f3f3f3;
+        border-top: 5px solid #838282;
+        border-radius: 50%;
+        overflow: hidden;
+        z-index: 2;
+        animation: spin 1s linear infinite;
+
+        @include breakpoint($md-5, 0) {
+            margin-top: 30px;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+
+        }
+    }
+
+    &__error {
+        margin-top: 20px;
+        color: red;
+        font-size: 25px;
+        align-self: center;
+    }
+}
+
+
+.search-city {
+    width: 450px;
+    position: relative;
+    margin-bottom: 40px;
+
+    &__input {
+        color: $white;
+        border-bottom: 2px solid #63656a;
+        display: block;
+        min-width: 90px;
+        width: 100%;
+        font-size: 16px;
+        padding: 0 40px 3px 19px;
+        background: none;
+        height: 50px;
+
+        @include breakpoint($md-4, 0) {
+            padding: 0 25px 3px 10px;
+        }
+
+        &:focus {
+            &::-webkit-input-placeholder {
+                color: $white;
+            }
+
+            :-moz-placeholder {
+                color: $white;
+            }
+
+            ::-moz-placeholder {
+                color: $white;
+            }
+
+            border-bottom-color: $white;
+        }
+    }
+
+    @include breakpoint($md-4, 0) {
+        margin-bottom: 25px;
+    }
+}
+
+.item-city-dialog {
+
+
+    &__name {
+        &:not(:last-child) {
+            margin-bottom: 5px;
+            padding-right: 20px;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        display: block;
+        text-align: left;
+        font-size: 17px;
+        color: $white;
+
+        @include breakpoint($md-3, 0) {
+            &:not(:last-child) {
+                margin-bottom: 10px;
+                padding-right: 10px;
+            }
+        }
+
+        @include breakpoint($md-5, 0) {
+            font-size: 15px;
+        }
+    }
+}

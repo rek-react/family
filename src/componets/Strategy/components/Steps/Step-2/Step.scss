@@ -1,0 +1,20 @@
+@import "../../../../../scss/functions";
+.step-2-strategy {
+  background: radial-gradient(28.23% 50% at 50% 50%, #0c2a47 0%, #0f0e10 100%);
+  &-body {
+    display: flex;
+    column-gap: 20px;
+  }
+  &-col {
+    display: flex;
+    flex-direction: column;
+    &:not(.step-2-strategy-col_main) {
+      min-width: 120px;
+      flex: 1 1 120px;
+    }
+    &_main {
+      flex: 0 1 prc(490, 1220);
+      row-gap: 20px;
+    }
+  }
+}
