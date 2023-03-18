@@ -4,7 +4,7 @@ import { CitiesType } from "../types/ResponseCities";
 export const citiesApi = createApi({
   reducerPath: "citiesApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: process.env.REACT_APP_API_URI,
+    baseUrl: `${process.env.REACT_APP_API_URI}/api/cities`,
     credentials: "include",
   }),
   endpoints: (builder) => ({
