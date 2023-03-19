@@ -11,9 +11,9 @@ import PageContacts from "./pages/Contacts";
 const App = () => {
   const { pathname } = useLocation();
   useEffect(() => {
+    window.scrollTo(0, 0);
     new DynamicAdapt("max");
-  }, []);
-  useEffect(() => window.scrollTo(0, 0), [pathname]);
+  }, [pathname]);
   return (
     <Routes>
       <Route element={<Layout />} path="/">
