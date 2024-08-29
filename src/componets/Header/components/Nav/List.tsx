@@ -40,9 +40,16 @@ const HeaderNavList = () => {
   const isLaptop = useMediaQuery({
     query: "(max-width: 992px)",
   });
+
+  const isBurger = useMediaQuery({
+    query: "(max-width: 1600px)",
+  });
+  
   const handleClick = () => {
-    utilsFunctions.bodyLock();
-    dispatch(isActive());
+    if(isBurger){
+      utilsFunctions.bodyLock();
+      dispatch(isActive());
+    }
   };
   return (
     <ul className="nav-header__list">
